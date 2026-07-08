@@ -5,7 +5,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-aut
 const firebaseConfig = {
   apiKey: "AIzaSyC0DUG3ABj31yaMLZxE2gYTseEYOgQ4_4U",
   authDomain: "upheadlinenews-89d83.firebaseapp.com",
-  databaseURL: "https://upheadlinenews-89d83-default-rtdb.firebaseio.com",
+  databaseURL: https://upheadlinenews-89d83-default-rtdb.asia-southeast1.firebasedatabase.app/
   projectId: "upheadlinenews-89d83",
   storageBucket: "upheadlinenews-89d83.firebasestorage.app",
   messagingSenderId: "366107139152",
