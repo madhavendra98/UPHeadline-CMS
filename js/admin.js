@@ -40,3 +40,35 @@ window.publishNews = async function () {
     }
 
 };
+import { ref, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const newsList = document.getElementById("newsList");
+
+onValue(ref(db, "news"), (snapshot) => {
+    newsList.innerHTML = "";
+
+    if (!snapshot.exists()) return;
+
+    const data = snapshot.val();
+
+    Object.entries(data).reverse().forEach(([id, news]) => {
+
+        newsList.innerHTML += `
+        <div class="news-card">
+            <h3>${news.title}</h3>
+            <p>${news.description}</p>
+
+            <button onclick="deleteNews('${id}')">🗑 Delete</button>
+        </div>
+        `;
+    });
+});
+
+window.deleteNews = async function(id) {
+
+    if (!confirm("क्या आप यह News हटाना चाहते हैं?")) return;
+
+    await remove(ref(db, "news/" + id));
+
+    alert("News Deleted");
+}
