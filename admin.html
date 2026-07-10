@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPHeadline CMS - Admin Panel</title>
 
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.admin-box{
+    max-width:800px;
+    margin:30px auto;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.admin-box h2{
+    color:#c00000;
+    margin-bottom:20px;
+}
+
+.admin-box input,
+.admin-box textarea,
+.admin-box select{
+
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+
+}
+
+.admin-box textarea{
+
+    height:180px;
+
+}
+
+.admin-box button{
+
+    background:#c00000;
+    color:white;
+    padding:14px;
+    width:100%;
+    border:none;
+    border-radius:6px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+.admin-box button:hover{
+
+background:#900;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+📰 UPHeadline CMS
+</div>
+
+</header>
+
+<div class="admin-box">
+
+<h2>Publish News</h2>
+
+<input
+type="text"
+id="title"
+placeholder="News Title">
+
+<textarea
+id="description"
+placeholder="News Description"></textarea>
+
+<input
+type="text"
+id="image"
+placeholder="Image URL (Example: images/news1.jpg)">
+
+<select id="category">
+
+<option>UP News</option>
+
+<option>India</option>
+
+<option>World</option>
+
+<option>Sports</option>
+
+<option>Business</option>
+
+<option>Technology</option>
+
+</select>
+
+<button onclick="publishNews()">
+
+🚀 Publish News
+
+</button>
+
+</div>
+
+<script type="module" src="js/admin.js"></script>
+
+</body>
+</html>
