@@ -1,5 +1,4 @@
-import { db } from "./firebase-config.js";
-
+import { db, storage } from "./firebase-config.js";
 import {
   ref,
   push,
@@ -7,7 +6,11 @@ import {
   remove,
   update
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
+import {
+  ref as storageRef,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 // Publish News
 window.publishNews = async function () {
 
