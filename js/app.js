@@ -45,3 +45,31 @@ onValue(newsRef, (snapshot) => {
     });
 
 });
+const slides = [
+{
+image:"https://picsum.photos/1200/450?1",
+title:"UPHeadline Breaking News"
+},
+{
+image:"https://picsum.photos/1200/450?2",
+title:"Latest India News"
+},
+{
+image:"https://picsum.photos/1200/450?3",
+title:"World News Updates"
+}
+];
+
+let current = 0;
+
+setInterval(()=>{
+
+current++;
+
+if(current>=slides.length) current=0;
+
+document.getElementById("sliderImage").src=slides[current].image;
+
+document.getElementById("sliderTitle").innerText=slides[current].title;
+
+},3000);
