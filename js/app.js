@@ -104,3 +104,18 @@ function displayNews(newsArray){
     });
 
 }
+document.getElementById("searchBox").addEventListener("keyup", function(){
+
+    const value = this.value.toLowerCase();
+
+    const filtered = allNews.filter(([id,news])=>
+
+        news.title.toLowerCase().includes(value) ||
+
+        news.description.toLowerCase().includes(value)
+
+    );
+
+    displayNews(filtered);
+
+});
