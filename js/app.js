@@ -40,7 +40,7 @@ onValue(newsRef, (snapshot) => {
 
         newsContainer.innerHTML += `
 
-        <div class="news-card">
+        <div class="news-card" onclick="window.location='news.html?id=${key}'" style="cursor:pointer;">
 
             <img src="${news.image || 'https://picsum.photos/600/350'}" alt="News">
 
