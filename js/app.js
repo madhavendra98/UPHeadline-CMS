@@ -22,7 +22,9 @@ onValue(newsRef, (snapshot) => {
 
     const data = snapshot.val();
     const newsArray = Object.entries(data).reverse();
-
+allNews = newsArray;
+displayNews(newsArray);
+return;
     newsArray.forEach(([key, news]) => {
 
         newsContainer.innerHTML += `
