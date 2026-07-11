@@ -150,3 +150,54 @@ nav a{
     cursor:pointer;
     border-radius:5px;
 }
+.top-header{
+    background:#c00000;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+}
+
+.search-box{
+    display:flex;
+    gap:5px;
+}
+
+.search-box input{
+    width:250px;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+.search-box button{
+    padding:10px 15px;
+    background:#222;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.menu{
+    background:#222;
+    text-align:center;
+    padding:12px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:yellow;
+}
