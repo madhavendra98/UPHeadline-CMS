@@ -16,41 +16,49 @@ window.publishNews = async function () {
 
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("description").value.trim();
-    const image = document.getElementById("image").value.trim();
     const category = document.getElementById("category").value;
+    const file = document.getElementById("imageFile").files[0];
 
     if (!title || !description) {
         alert("Title और Description भरें");
         return;
     }
 
-    try {
+    let image = "https://picsum.photos/600/350";
 
-        await push(ref(db, "news"), {
+    if (file) {
 
-            title,
-            description,
-            image,
-            category,
-            date: Date.now()
+        const formData = new FormData();
+        formData.append("image", file);
 
-        });
+        const response = await fetch(
+            "https://api.imgbb.com/1/upload?key=a7696bd67a3c728c76935a34574a27aa",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
 
-        alert("✅ News Published Successfully");
+        const result = await response.json();
 
-        document.getElementById("title").value = "";
-        document.getElementById("description").value = "";
-        document.getElementById("image").value = "";
-        document.getElementById("category").selectedIndex = 0;
-
-    } catch (error) {
-
-        alert(error.message);
-
+        image = result.data.url;
     }
 
-};
+    await push(ref(db, "news"), {
 
+        title,
+        description,
+        category,
+        image,
+        date: Date.now()
+
+    });
+
+    alert("✅ News Published Successfully");
+
+    location.reload();
+
+};
 // Show News List
 
 const newsList = document.getElementById("newsList");
